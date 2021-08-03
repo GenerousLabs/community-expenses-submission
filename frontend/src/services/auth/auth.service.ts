@@ -24,6 +24,17 @@ if (
   );
 }
 
+if (
+  globalThis.navigator.userAgent.indexOf("Chrome") === -1 &&
+  globalThis.navigator.userAgent.indexOf("Safari") !== -1
+) {
+  globalThis.alert(
+    `ERROR\n\nSorry, but login doesn't work in Safari. We don't know why. ` +
+      `If we figure it out and fix it, we'll remove this notice. ` +
+      `In the meantime, sorry, please use Chrome (not Incognito) or Firefox.\n#94uzBG`
+  );
+}
+
 const TOKEN_STORAGE_KEY = "_authToken";
 const USER_ID_STORAGE_KEY = "_userId";
 const ROLES_STORAGE_KEY = "_roles";
