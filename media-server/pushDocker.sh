@@ -1,4 +1,6 @@
 #!/bin/bash
 
-docker tag community-expenses-submission-server:latest chmac/community-expenses-submission-server:latest
-docker push chmac/community-expenses-submission-server:latest
+source .env
+
+docker tag $DOCKER_REPO_NAME:latest $DOCKER_USER_NAME/$DOCKER_REPO_NAME
+docker push $DOCKER_USER_NAME/$DOCKER_REPO_NAME:latest
