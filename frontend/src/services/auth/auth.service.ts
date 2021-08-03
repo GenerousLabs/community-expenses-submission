@@ -41,14 +41,12 @@ const lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {
   },
 });
 
-/*
 lock.on("authorization_error", (error) => {
   debugger;
 });
 lock.on("unrecoverable_error", (error) => {
   debugger;
 });
-*/
 
 lock.on("authenticated", (authResult: AuthResult) => {
   if (typeof authResult.idTokenPayload === "undefined") {
