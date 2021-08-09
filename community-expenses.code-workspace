@@ -1,14 +1,17 @@
 {
   "folders": [
-	{
-		"path": "frontend"
-	},
-	{
-		"path": "hasura"
-	},
-	{
-		"path": "media-server"
-	}
-],
+		{
+			"path": "frontend"
+		},
+		{
+			"path": "hasura"
+		},
+		{
+			"path": "media-server"
+		},
+		{
+			"path": "server"
+		}
+	],
   "settings": {}
 }
