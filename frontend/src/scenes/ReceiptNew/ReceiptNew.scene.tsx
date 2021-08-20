@@ -94,7 +94,7 @@ const bridge = new GraphQLBridge(
 
 const NewReceiptQuery = gql`
   query NewReceiptQuery($user_id: String!) {
-    budget_categories {
+    budget_categories(order_by: { name: asc }) {
       id
       name
     }
