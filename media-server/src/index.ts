@@ -87,6 +87,8 @@ app.use(async (ctx, next) => {
   const destinationPath = path.join(MEDIA_PATH, newFileName);
   await fs.move(file.path, destinationPath);
 
+  if (DEBUG) console.log("Moved uploaded file #TgxWxM", { destinationPath });
+
   ctx.body = JSON.stringify({ fileUrl: `/${userId}/${fileId}` });
 });
 
