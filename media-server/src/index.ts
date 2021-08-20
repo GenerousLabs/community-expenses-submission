@@ -8,7 +8,7 @@ import { koaJwtSecret } from "jwks-rsa";
 import uuid from "uuid/v4";
 import send from "koa-send";
 
-const DEBUG = false;
+const DEBUG = typeof process.env.DEBUG === "string";
 
 const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN;
 const AUTH0_CLIENT_ID = process.env.AUTH0_CLIENT_ID;
