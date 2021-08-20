@@ -84,9 +84,8 @@ app.use(async (ctx, next) => {
   const fileId = uuid();
   const newFileName = `${userId}__${fileId}`;
   const file = ctx.request.files.file;
-  const reader = fs.createReadStream(file.path);
-  const writer = fs.createWriteStream(path.join(MEDIA_PATH, newFileName));
-  reader.pipe(writer);
+  const destinationPath = path.join(MEDIA_PATH, newFileName);
+  await fs.move(file.path, destinationPath);
 
   ctx.body = JSON.stringify({ fileUrl: `/${userId}/${fileId}` });
 });
